@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+/usr/bin/env pylint \
+    -j 0 \
+    -rn \
+    "$@"
