@@ -18,7 +18,7 @@ We'll be evaluating each submission based on the following criteria:
 
 **Parser Class**
 
-The skeleton parser class has been provided in the repository. The `parse` method should accept a usage string or an array of strings. It should perform the parsing and return an array of objects containing the id and the available values as depicted below. Values not present in the parsing strings should be included in the returned object as `null`/`nil`.
+The skeleton parser class has been provided in the repository. The `parse` method should accept a usage string or an array of strings. It should perform the parsing and return an array of objects containing the id and the available values as depicted below. Values not present in the parsing strings should be included in the returned object as `None`.
 
 
 **ID Parsing**
@@ -68,7 +68,7 @@ The hex string is a 24-character (12-byte) non-separated string with fixed posit
 	id: 7294,
 	mnc: 182,
 	bytes_used: 293451,
-	dmcc: nil,
+	dmcc: None,
 	cellid: 31194,
 	ip: '192.168.0.1'
   },
@@ -78,7 +78,7 @@ The hex string is a 24-character (12-byte) non-separated string with fixed posit
 	bytes_used: 1024,
 	dmcc: 'a03',
 	cellid: 193955,
-	ip: nil
+	ip: None
   }
 ]
 ```
