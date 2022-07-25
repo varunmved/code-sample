@@ -62,10 +62,10 @@ The hex string is a 24-character (12-byte) non-separated string with fixed posit
 
 **Example parsed objects:**
 
-```ruby
+```python
 [
   {
-    id: 7294,
+	id: 7294,
 	mnc: 182,
 	bytes_used: 293451,
 	dmcc: nil,
