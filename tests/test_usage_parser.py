@@ -135,3 +135,13 @@ class TestStringArray(unittest.TestCase):
             self.usage_parser.parse(*self.input),
             self.expected
         )
+
+
+class TestIpParser(unittest.TestCase):
+    '''UsageParser.generate_ip_from_hex'''
+
+    def test_ip_parser_succesful(self):
+        self.assertEqual(
+            UsageParser.generate_ip_from_hex('c0014aff'),
+            '192.1.74.255'
+        )
