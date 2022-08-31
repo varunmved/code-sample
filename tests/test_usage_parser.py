@@ -3,6 +3,7 @@ import unittest
 
 from usage_parser import UsageParser
 
+
 class TestNormalUsage(unittest.TestCase):
     '''UsageParser.parse: Given a single string => Given an ID that does not end with 4 or 6'''
 
@@ -21,14 +22,15 @@ class TestNormalUsage(unittest.TestCase):
                 mnc=None,
             ),
         ]
-
+        self.usage_parser = UsageParser()
 
     def test_return_basic_string_data(self):
         '''Then it will return basic string data'''
         self.assertListEqual(
-            UsageParser.parse(self.input),
+            self.usage_parser.parse(self.input),
             self.expected
         )
+
 
 class TestExtendedUsage(unittest.TestCase):
     '''UsageParser.parse: Given a single string => Given an ID that ends with 4'''
@@ -48,14 +50,15 @@ class TestExtendedUsage(unittest.TestCase):
                 mnc=394,
             ),
         ]
-
+        self.usage_parser = UsageParser()
 
     def test_return_extended_string_data(self):
         '''Then it will return extended string data'''
         self.assertListEqual(
-            UsageParser.parse(self.input),
+            self.usage_parser.parse(self.input),
             self.expected
         )
+
 
 class TestHexUsage(unittest.TestCase):
     '''UsageParser.parse: Given a single string => Given an ID that ends with 6'''
@@ -75,14 +78,15 @@ class TestHexUsage(unittest.TestCase):
                 mnc=3721,
             ),
         ]
-
+        self.usage_parser = UsageParser()
 
     def test_return_hex_string_data(self):
         '''Then it will return hex string data'''
         self.assertListEqual(
-            UsageParser.parse(self.input),
+            self.usage_parser.parse(self.input),
             self.expected
         )
+
 
 class TestStringArray(unittest.TestCase):
     '''UsageParser.parse: Given an array of strings'''
@@ -123,10 +127,11 @@ class TestStringArray(unittest.TestCase):
                 mnc=None,
             ),
         ]
+        self.usage_parser = UsageParser()
 
     def test_return_all_string_data(self):
         '''Then it will parse each string according to its ID and return an array of data'''
         self.assertListEqual(
-            UsageParser.parse(*self.input),
+            self.usage_parser.parse(*self.input),
             self.expected
         )
