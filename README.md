@@ -1,6 +1,6 @@
 ## Introduction
 
-Hello engineering candidate! This is Hologram's take-home exercise for software engineers with a backend or full-stack focus. The challenge will be to implement a “usage parser” class to handle several types of incoming data strings, differentiated by id, and parse their constituent data. To facilitate this, we’ve done the TDD part for you: you have a set of tests that should pass when the class is complete!
+Hello engineering candidate! This is **  take-home exercise for software engineers with a backend or full-stack focus. The challenge will be to implement a “usage parser” class to handle several types of incoming data strings, differentiated by id, and parse their constituent data. To facilitate this, we’ve done the TDD part for you: you have a set of tests that should pass when the class is complete!
 
 ## Setup
 
