@@ -1,20 +1,26 @@
 import json
-import typing
-from parser_models.parsed_object import ParsedObject
-from exceptions import UsageParserServiceException
+import re
+from usage_parser import UsageParser
+
+
+class UsageParserServiceException(Exception):
+    pass
 
 
 class UsageParserService:
     """
-    The parser service that will handle inputs and return JSON
+    The parser service that will handle inputs and return JSON in some web api layer
     """
 
     # @route('/create_parsed', @method=POST)
     def create_parsed_object(self, parse_request: str):
-        parse_request_json = json.loads(parse_request)
-        is_valid = validate_request(parse_request)
-        return parse_request_json
+        request_string = json.loads(parse_request)
+        self.validate_request(parse_request)
+        UsageParser.parse(request_string)
 
     @staticmethod
-    def validate_request(parse_request:str):
-        if ',' not in parse_request
+    def validate_request(parse_request: str):
+        if ',' not in parse_request:
+            raise UsageParserServiceException
+        if re.search('[a-zA-Z]', parse_request):
+            raise UsageParserServiceException
